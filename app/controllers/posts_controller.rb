@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
@@ -11,6 +13,8 @@ class PostsController < ApplicationController
     @post = current_user.posts.new
   end
 
+  def edit; end
+
   def create
     @post = current_user.posts.new(post_params)
 
@@ -21,8 +25,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit; end
-  
   def update
     if @post.update(post_params)
       redirect_to root_path, notice: 'Post was successfully updated.'
@@ -30,15 +32,19 @@ class PostsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @post.destroy
     redirect_to root_path, notice: 'Post was successfully destroyed.'
   end
-  
+
   private
-  
+
   def post_params
     params.require(:post).permit(:title, :content)
+  end
+
+  def set_post
+    @post = current_user.posts.find(params[:id])
   end
 end
