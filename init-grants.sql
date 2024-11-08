@@ -1,0 +1,2 @@
+GRANT ALL PRIVILEGES ON test_app_test.* TO 'user'@'%';
+FLUSH PRIVILEGES;
