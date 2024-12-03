@@ -7,6 +7,7 @@ ruby '3.3.5'
 gem 'bigdecimal'
 gem 'bootsnap', require: false
 gem 'devise'
+gem 'faker'
 gem 'graphiql-rails'
 gem 'graphql'
 gem 'importmap-rails'

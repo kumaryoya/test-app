@@ -8,13 +8,13 @@ module Types
 
     # Resolver for users
     def users
-      User.select(:id, :login_id, :created_at, :updated_at)
+      User.select(:id, :name, :age)
     end
 
     # Resolver for user_post_counts
     def user_post_counts
       User.left_joins(:posts)
-          .select('users.id, users.login_id, users.created_at, users.updated_at, COUNT(posts.id) AS posts_count')
+          .select('users.id, users.name, COUNT(posts.id) AS posts_count')
           .group('users.id')
     end
   end

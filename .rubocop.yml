@@ -4,6 +4,7 @@ require:
 
 AllCops:
   NewCops: enable
+  SuggestExtensions: false
   Exclude:
     - 'bin/**/*'
     - 'db/schema.rb'
@@ -19,3 +20,7 @@ Rails/I18nLocaleTexts:
 Rails/LexicallyScopedActionFilter:
   Exclude:
     - 'app/controllers/sessions_controller.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/**/*'
