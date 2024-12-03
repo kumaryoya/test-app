@@ -15,3 +15,7 @@ Style/Documentation:
 # 日本語がlocaleファイル以外に記述されていることをチェックしない
 Rails/I18nLocaleTexts:
   Enabled: false
+
+Rails/LexicallyScopedActionFilter:
+  Exclude:
+    - 'app/controllers/sessions_controller.rb'

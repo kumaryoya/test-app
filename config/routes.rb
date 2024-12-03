@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :aaaaas
   root to: 'posts#index'
 
   devise_for :users, controllers: {
