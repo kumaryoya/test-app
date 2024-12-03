@@ -3,7 +3,7 @@
 module Api
   module V1
     class UsersController < ApplicationController
-      skip_before_action :authenticate_user!, only: %i[index count_posts]
+      skip_before_action :authenticate_user!
 
       # http://localhost:3000/api/v1/users
       def index
