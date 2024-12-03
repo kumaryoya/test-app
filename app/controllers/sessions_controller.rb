@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class SessionsController < Devise::SessionsController
-  skip_before_action :authenticate_user!, only: %i[new create]
-
   protected
 
   def after_sign_in_path_for(_resource)

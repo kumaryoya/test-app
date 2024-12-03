@@ -1,4 +1,17 @@
-require: rubocop-rails
+require:
+  - rubocop-rails
+  - rubocop-capybara
 
 AllCops:
   NewCops: enable
+  Exclude:
+    - 'bin/**/*'
+    - 'db/schema.rb'
+
+# 各クラスやモジュールにコメントが記述されていることをチェックしない
+Style/Documentation:
+  Enabled: false
+
+# 日本語がlocaleファイル以外に記述されていることをチェックしない
+Rails/I18nLocaleTexts:
+  Enabled: false
