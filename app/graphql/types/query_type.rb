@@ -2,16 +2,13 @@
 
 module Types
   class QueryType < Types::BaseObject
-    # All available queries
-    field :user_post_counts, [Types::UserType], null: false, description: 'Fetch users and their post counts'
-    field :users, [Types::UserType], null: false, description: 'Fetch all users'
+    field :users, [Types::UserType], null: false
+    field :user_post_counts, [Types::UserType], null: false
 
-    # Resolver for users
     def users
       User.select(:id, :name, :age)
     end
 
-    # Resolver for user_post_counts
     def user_post_counts
       User.left_joins(:posts)
           .select('users.id, users.name, COUNT(posts.id) AS posts_count')
