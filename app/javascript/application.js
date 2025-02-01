@@ -4,3 +4,4 @@ import "controllers"
 import "jquery"
 import "bootstrap"
 import "admin-lte"
+import "controllers/copy";

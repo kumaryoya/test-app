@@ -7,7 +7,12 @@ div.p-5
       .card.border.m-3 style="width: 400px;"
         .card-header.h5 = post.title
         .card-body
-          p.card-text = post.content
+          .float-right
+            button.copy-button.btn.btn-outline-secondary.btn-sm data-target="post_#{post.id}"
+              i.far.fa-copy.mr-1
+              span.copy-text コピー
+          div id="post_#{post.id}"
+            .mb-3 = post.content
           = link_to "詳細", post, class: 'btn btn-outline-secondary btn-sm mr-1'
           = link_to "編集", edit_post_path(post), class: 'btn btn btn-outline-info btn-sm mr-1'
           = link_to "削除", post, method: :delete, data: { turbo: "true", turbo_method: :delete, turbo_confirm: '削除しますか?' }, class: "btn btn-outline-danger btn-sm"
