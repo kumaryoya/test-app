@@ -8,6 +8,7 @@ gem 'bigdecimal'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'faker'
+gem 'google-api-client'
 gem 'graphiql-rails'
 gem 'graphql'
 gem 'importmap-rails'

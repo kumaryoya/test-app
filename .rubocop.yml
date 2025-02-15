@@ -7,13 +7,14 @@ AllCops:
   SuggestExtensions: false
   Exclude:
     - 'bin/**/*'
-    - 'db/schema.rb'
+    - 'db/**/*'
 
-# 各クラスやモジュールにコメントが記述されていることをチェックしない
-Style/Documentation:
-  Enabled: false
+Metrics/BlockLength:
+  Max: 50
 
-# 日本語がlocaleファイル以外に記述されていることをチェックしない
+Metrics/MethodLength:
+  Max: 50
+
 Rails/I18nLocaleTexts:
   Enabled: false
 
@@ -21,6 +22,5 @@ Rails/LexicallyScopedActionFilter:
   Exclude:
     - 'app/controllers/sessions_controller.rb'
 
-Metrics/MethodLength:
-  Exclude:
-    - 'db/**/*'
+Style/Documentation:
+  Enabled: false
