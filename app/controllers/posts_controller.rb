@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
-    @posts = current_user.posts.order(id: :asc)
+    @posts = current_user.posts.order(id: :desc)
   end
 
   def show; end
