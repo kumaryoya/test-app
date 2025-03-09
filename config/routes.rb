@@ -20,5 +20,9 @@ Rails.application.routes.draw do
     sessions: 'sessions'
   }, path: '', path_names: { sign_in: 'sign_in', sign_out: 'sign_out' }
 
-  resources :posts, only: %i[show new create edit update destroy]
+  resources :posts, only: %i[show new create edit update destroy] do
+    collection do
+      get :export_to_spreadsheet
+    end
+  end
 end

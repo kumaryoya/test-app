@@ -38,6 +38,13 @@ class PostsController < ApplicationController
     redirect_to root_path, notice: 'Post was successfully destroyed.'
   end
 
+  def export_to_spreadsheet
+    spreadsheet_service = SpreadsheetService.new
+    spreadsheet_service.create_spreadsheet(current_user) if current_user.spreadsheet_id.blank?
+    spreadsheet_service.export_posts(current_user)
+    redirect_to root_path, notice: 'Post was successfully exported to Spreadsheet.'
+  end
+
   private
 
   def post_params

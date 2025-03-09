@@ -2,6 +2,7 @@ div.p-5
   h1.mb-3 投稿一覧
   p style="color: green" = notice
   = link_to "新規追加", new_post_path, class: 'btn btn-outline-info btn-sm m-3'
+  = link_to "スプレッドシートに出力", export_to_spreadsheet_posts_path, class: 'btn btn-outline-primary btn-sm'
   .d-flex.flex-wrap.align-items-center
     - @posts.each do |post|
       .card.border.m-3 style="width: 400px;"
