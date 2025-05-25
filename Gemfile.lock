@@ -390,6 +390,7 @@ DEPENDENCIES
   mutex_m
   mysql2 (~> 0.5)
   ostruct
+  parallel
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.6)
   rubocop
