@@ -8,7 +8,7 @@ namespace :test do
     items = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
 
     items.each do |item|
-    # Parallel.each(items, in_processes: Parallel.processor_count) do |item|
+    # Parallel.map(items) do |item|
       (1..100).each do |i|
         puts "#{item} - #{i}"
         sleep(0.1)
