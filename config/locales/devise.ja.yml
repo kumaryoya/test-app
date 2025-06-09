@@ -1,0 +1,5 @@
+ja:
+  devise:
+    failure:
+      locked: "アカウントはロックされています。%{unlock_in}後に自動的にロック解除されます。"
+      last_attempt: "あと1回ログインに失敗するとアカウントがロックされます。"

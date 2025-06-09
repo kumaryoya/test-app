@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_03_08_134258) do
+ActiveRecord::Schema[7.0].define(version: 2025_06_09_113003) do
   create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title", null: false
     t.string "body", null: false
@@ -36,6 +36,9 @@ ActiveRecord::Schema[7.0].define(version: 2025_03_08_134258) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "spreadsheet_id"
+    t.integer "failed_attempts"
+    t.datetime "locked_at"
+    t.string "unlock_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["login_id"], name: "index_users_on_login_id", unique: true
   end
