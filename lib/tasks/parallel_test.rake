@@ -3,19 +3,19 @@
 namespace :test do
   desc 'parallel_test'
   task parallel_test: :environment do
-    start_time = Time.now
+    start_time = Time.zone.now
 
-    items = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+    items = %w[A B C D E F G H I J]
 
-    items.each do |item|
     # Parallel.map(items) do |item|
+    items.each do |item|
       (1..100).each do |i|
         puts "#{item} - #{i}"
         sleep(0.1)
       end
     end
 
-    end_time = Time.now
+    end_time = Time.zone.now
 
     elapsed_time = end_time - start_time
 
