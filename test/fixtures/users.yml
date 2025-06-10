@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+
+one:
+  name: "Test User"
+  email: "test@example.com"
+  age: 25
+  login_id: "testuser"
+  encrypted_password: "<%= Devise::Encryptor.digest(User, 'password123') %>"
+  failed_attempts: 0
+
+two:
+  name: "Another User"  
+  email: "user2@example.com"
+  age: 30
+  login_id: "user2"
+  encrypted_password: "<%= Devise::Encryptor.digest(User, 'password456') %>"
+  failed_attempts: 0

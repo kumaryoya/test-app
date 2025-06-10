@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  devise :database_authenticatable, authentication_keys: [:login_id]
+  devise :database_authenticatable, authentication_keys: [:login_id],
+         :lockable
 
   has_many :posts, dependent: :destroy
 

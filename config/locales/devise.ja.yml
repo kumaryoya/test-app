@@ -1,0 +1,8 @@
+ja:
+  devise:
+    failure:
+      locked: "アカウントはロックされています。1時間後に再度ログインをお試しください。"
+      last_attempt: "あと1回ログインに失敗すると、アカウントがロックされます。"
+    mailer:
+      unlock_instructions:
+        subject: "アカウントロック解除のお知らせ"
