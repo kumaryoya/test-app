@@ -1,0 +1,9 @@
+test_user:
+  name: Test User
+  email: test@example.com
+  age: 30
+  login_id: testuser
+  encrypted_password: $2a$12$placeholder_for_bcrypt_password_hash
+  failed_attempts: 0
+  locked_at: 
+  unlock_token: 

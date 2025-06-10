@@ -24,7 +24,7 @@ class SessionsController < Devise::SessionsController
   end
 
   def respond_to_on_lock
-    flash[:alert] = I18n.t('devise.failure.locked', unlock_in: distance_of_time_in_words(Time.now, user.locked_at + Devise.unlock_in))
+    flash[:alert] = I18n.t('devise.failure.locked', unlock_in: distance_of_time_in_words(Time.now, resource.locked_at + Devise.unlock_in))
     redirect_to new_user_session_path
   end
 
