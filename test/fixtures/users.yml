@@ -1,0 +1,28 @@
+# frozen_string_literal: true
+
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Test User One
+  email: test1@example.com
+  login_id: testuser1
+  age: 25
+  encrypted_password: $2a$11$K2nh8Gf8Q9.QNJF3x1abweQ9LsYj8uM4tOP8zKj5K0vB3PjYOHv8u # password123
+  failed_attempts: 0
+
+two:
+  name: Test User Two
+  email: test2@example.com
+  login_id: testuser2
+  age: 30
+  encrypted_password: $2a$11$K2nh8Gf8Q9.QNJF3x1abweQ9LsYj8uM4tOP8zKj5K0vB3PjYOHv8u # password123
+  failed_attempts: 5
+
+locked_user:
+  name: Locked User
+  email: locked@example.com
+  login_id: lockeduser
+  age: 35
+  encrypted_password: $2a$11$K2nh8Gf8Q9.QNJF3x1abweQ9LsYj8uM4tOP8zKj5K0vB3PjYOHv8u # password123
+  failed_attempts: 10
+  locked_at: <%= 30.minutes.ago %>

@@ -1,4 +1,10 @@
 h2 Log in
+
+- if flash[:alert]
+  .alert.alert-danger= flash[:alert]
+- if flash[:notice]  
+  .alert.alert-info= flash[:notice]
+
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .field
     = f.label :login_id
