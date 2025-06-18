@@ -1,0 +1,16 @@
+test_user:
+  name: Test User
+  email: test@example.com
+  age: 25
+  login_id: test_user
+  encrypted_password: $2a$12$K/BqKq8OMVzttzPQhWciWO4cSOlhcqrNy7RIpuLvnfNAjojhllg/W
+  failed_attempts: 0
+
+locked_user:
+  name: Locked User
+  email: locked@example.com
+  age: 30
+  login_id: locked_user
+  encrypted_password: $2a$12$K/BqKq8OMVzttzPQhWciWO4cSOlhcqrNy7RIpuLvnfNAjojhllg/W
+  failed_attempts: 10
+  locked_at: <%= Time.current %>
