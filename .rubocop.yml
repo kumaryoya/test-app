@@ -22,5 +22,8 @@ Rails/LexicallyScopedActionFilter:
   Exclude:
     - 'app/controllers/sessions_controller.rb'
 
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false

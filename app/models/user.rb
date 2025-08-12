@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, authentication_keys: [:login_id]
 
   has_many :posts, dependent: :destroy
+  has_many :chain_words, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :email, presence: true, uniqueness: true, length: { maximum: 255 }
