@@ -1,0 +1,8 @@
+div.p-5
+  h1.mb-3 しりとり
+  p style="color: green" = notice
+  .d-flex.flex-wrap.align-items-center
+    - @chain_words.each do |chain_word|
+      .card.border.m-3 style="width: 400px;"
+        .card-header.h5.text-center = chain_word.word
+        .card-body.h5.text-center = chain_word.user.name
