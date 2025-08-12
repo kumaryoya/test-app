@@ -25,4 +25,6 @@ Rails.application.routes.draw do
       get :export_to_spreadsheet
     end
   end
+
+  resources :chain_words, only: %i[index create]
 end
