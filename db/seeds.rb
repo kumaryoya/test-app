@@ -18,3 +18,18 @@
     )
   end
 end
+
+ChainWord.create!(
+  user_id: 1,
+  word: "りんご"
+)
+
+ChainWord.create!(
+  user_id: 2,
+  word: "ごりら"
+)
+
+ChainWord.create!(
+  user_id: 3,
+  word: "らっぱ"
+)
