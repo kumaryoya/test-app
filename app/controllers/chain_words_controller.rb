@@ -2,7 +2,7 @@
 
 class ChainWordsController < ApplicationController
   def index
-    @chain_words = ChainWord.order(id: :desc)
+    @chain_words = ChainWord.includes(:user).order(id: :desc)
     @chain_word = current_user.chain_words.new
   end
 
@@ -12,7 +12,8 @@ class ChainWordsController < ApplicationController
     if @chain_word.save
       redirect_to chain_words_path, notice: 'ChainWord was successfully created.'
     else
-      render :new
+      @chain_words = ChainWord.includes(:user).order(id: :desc)
+      render :index
     end
   end
 

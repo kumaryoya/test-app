@@ -1,6 +1,20 @@
 div.p-5
   h1.mb-3 しりとり
   p style="color: green" = notice
+  
+  / フォーム追加
+  .m-3
+    = form_with model: @chain_word, local: true, class: "d-flex align-items-center" do |form|
+      .me-3
+        = form.text_field :word, placeholder: "ひらがなで単語を入力", class: "form-control", style: "width: 300px;"
+      = form.submit "追加", class: "btn btn-primary"
+    
+    - if @chain_word.errors.any?
+      .alert.alert-danger.mt-2
+        ul.mb-0
+          - @chain_word.errors.full_messages.each do |message|
+            li = message
+  
   .d-flex.flex-wrap.align-items-center
     - @chain_words.each do |chain_word|
       .card.border.m-3 style="width: 400px;"
