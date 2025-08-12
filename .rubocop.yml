@@ -13,6 +13,9 @@ Layout/LineLength:
   Exclude:
     - 'config/**/*'
 
+Metrics/AbcSize:
+  Max: 30
+
 Metrics/BlockLength:
   Exclude:
     - 'config/**/*'
