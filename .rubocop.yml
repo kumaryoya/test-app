@@ -9,8 +9,13 @@ AllCops:
     - 'bin/**/*'
     - 'db/**/*'
 
+Layout/LineLength:
+  Exclude:
+    - 'config/**/*'
+
 Metrics/BlockLength:
-  Max: 50
+  Exclude:
+    - 'config/**/*'
 
 Metrics/MethodLength:
   Max: 50
