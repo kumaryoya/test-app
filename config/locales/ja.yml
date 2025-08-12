@@ -1,0 +1,13 @@
+ja:
+  errors:
+    format: "%{message}"
+    messages:
+      blank: "%{attribute}を入力してください"
+      confirmation: "%{attribute}と入力が一致しません"
+      invalid: "%{attribute}は不正な値です"
+      taken: "%{attribute}はすでに存在します"
+      not_a_number: "%{attribute}は数値で入力してください"
+      too_long: "%{attribute}は%{count}文字以内で入力してください"
+      too_short: "%{attribute}は%{count}文字以上で入力してください"
+      greater_than_or_equal_to: "%{attribute}は%{count}以上の値にしてください"
+      less_than_or_equal_to: "%{attribute}は%{count}以下の値にしてください"

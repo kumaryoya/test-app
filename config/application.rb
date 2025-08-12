@@ -21,6 +21,8 @@ module TestApp
     ]
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.i18n.available_locales = %i[en ja]
+    config.i18n.default_locale = :ja
     config.generators.template_engine = :slim
 
     config.generators do |g|

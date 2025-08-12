@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      chain_word: 'しりとり'
+    attributes:
+      chain_word:
+        word: '単語'
