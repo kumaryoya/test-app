@@ -27,32 +27,26 @@ consumer.subscriptions.create("ChainWordChannel", {
       <div class="card-body h5 text-center">${chainWord.user_name}</div>
     `;
 
-    // カードコンテナを取得
     const cardContainer = document.querySelector('#chain-word-container');
 
     if (cardContainer) {
-      // 新しいカードを先頭に追加（最新のものが上に表示される）
       cardContainer.insertBefore(newCard, cardContainer.firstChild);
 
-      // フォームをリセット
       const wordInput = document.querySelector('#chain_word_word');
       if (wordInput) {
         wordInput.value = '';
       }
 
-      // 成功メッセージを表示
       this.showMessage('新しい単語が追加されました！', 'success');
     }
   },
 
   showMessage(text, type = 'info') {
-    // 既存のメッセージを削除
     const existingMessage = document.querySelector('.realtime-message');
     if (existingMessage) {
       existingMessage.remove();
     }
 
-    // 新しいメッセージを作成
     const message = document.createElement('div');
     message.className = `alert alert-${type} realtime-message`;
     message.style.position = 'fixed';
@@ -63,7 +57,6 @@ consumer.subscriptions.create("ChainWordChannel", {
 
     document.body.appendChild(message);
 
-    // 3秒後にメッセージを削除
     setTimeout(() => {
       if (message.parentNode) {
         message.parentNode.removeChild(message);
