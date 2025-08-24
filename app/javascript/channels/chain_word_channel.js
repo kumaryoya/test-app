@@ -1,12 +1,12 @@
 import consumer from "./consumer"
 
-consumer.subscriptions.create("ChainWordsChannel", {
+consumer.subscriptions.create("ChainWordChannel", {
   connected() {
-    console.log("Connected to ChainWordsChannel");
+    console.log("Connected to ChainWordChannel");
   },
 
   disconnected() {
-    console.log("Disconnected from ChainWordsChannel");
+    console.log("Disconnected from ChainWordChannel");
   },
 
   received(data) {
@@ -18,7 +18,6 @@ consumer.subscriptions.create("ChainWordsChannel", {
   },
 
   addChainWord(chainWord) {
-    // 新しいカードを作成
     const newCard = document.createElement('div');
     newCard.className = 'card border m-3';
     newCard.style.width = '400px';
@@ -29,7 +28,7 @@ consumer.subscriptions.create("ChainWordsChannel", {
     `;
 
     // カードコンテナを取得
-    const cardContainer = document.querySelector('#chain-words-container');
+    const cardContainer = document.querySelector('#chain-word-container');
 
     if (cardContainer) {
       // 新しいカードを先頭に追加（最新のものが上に表示される）

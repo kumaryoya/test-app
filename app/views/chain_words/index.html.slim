@@ -5,7 +5,7 @@ div.p-5
     = simple_form_for @chain_word, html: { class: "d-flex align-items-center", data: { remote: true } } do |form|
       = form.input :word, placeholder: "ひらがなで単語を入力", input_html: { style: "width: 300px;" }, label: false
       = form.submit "追加", class: "btn btn-primary mb-3", style: "width: 100px;"
-  .d-flex.flex-wrap.align-items-center id="chain-words-container"
+  .d-flex.flex-wrap.align-items-center id="chain-word-container"
     - @chain_words.each do |chain_word|
       .card.border.m-3 style="width: 400px;"
         .card-header.h5.text-center = chain_word.word

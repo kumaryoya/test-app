@@ -2,7 +2,6 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "channels"
-import "controllers/chain_words_form"
 import "jquery"
 import "bootstrap"
 import "admin-lte"
