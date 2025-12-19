@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   resources :chain_words, only: %i[index create]
 
-  resources :user_manuals, only: %i[] do
+  resources :user_manuals, only: [] do
     collection do
       get :test
     end
