@@ -30,6 +30,9 @@ Rails/LexicallyScopedActionFilter:
   Exclude:
     - 'app/controllers/sessions_controller.rb'
 
+Rails/OutputSafety:
+  Enabled: false
+
 Rails/UniqueValidationWithoutIndex:
   Enabled: false
 

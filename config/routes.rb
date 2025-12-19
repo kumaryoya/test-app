@@ -29,4 +29,10 @@ Rails.application.routes.draw do
   end
 
   resources :chain_words, only: %i[index create]
+
+  resources :user_manuals, only: %i[] do
+    collection do
+      get :test
+    end
+  end
 end
