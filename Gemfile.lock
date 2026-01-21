@@ -79,6 +79,9 @@ GEM
     bullet (8.0.1)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
+    bundler-audit (0.9.3)
+      bundler (>= 1.2.0)
+      thor (~> 1.0)
     capybara (3.40.0)
       addressable
       matrix
@@ -382,6 +385,7 @@ DEPENDENCIES
   bigdecimal
   bootsnap
   bullet
+  bundler-audit
   capybara
   debug
   devise
