@@ -1,5 +1,19 @@
 # frozen_string_literal: true
 
+require 'csv'
+
+def import_csv(model, file_path)
+  batch = []
+  CSV.foreach(file_path, headers: true) do |row|
+    batch << row.to_h
+    if batch.size >= 1000
+      model.insert_all(batch)
+      batch = []
+    end
+  end
+  model.insert_all(batch) if batch.any?
+end
+
 10.times do |user_index|
   login_id = "login_id#{user_index + 1}"
   user = User.find_or_create_by(login_id: login_id) do |u|
@@ -33,3 +47,7 @@ ChainWord.create!(
   user_id: 3,
   word: "らっぱ"
 )
+
+import_csv(Race, 'db/data/2020_races.csv')
+import_csv(RaceEntry, 'db/data/2020_race_entries.csv')
+import_csv(RaceResult, 'db/data/2020_race_results.csv')

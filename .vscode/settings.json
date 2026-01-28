@@ -36,6 +36,7 @@
     "importmap",
     "jbuilder",
     "keyrings",
+    "KHTML",
     "kredis",
     "libpq",
     "mongoid",
@@ -46,11 +47,13 @@
     "Osoa",
     "ostruct",
     "progressbar",
+    "quinella",
     "racc",
     "railties",
     "rdoc",
     "reconfirmable",
     "redcarpet",
+    "rentan",
     "retriable",
     "rexml",
     "rubocop",
@@ -59,9 +62,11 @@
     "Sjdvm",
     "stringio",
     "timeoutable",
+    "touchi",
     "validatable",
     "yarnkey",
     "zeitwerk",
+    "zenkoku",
     "zoneinfo"
   ]
 }

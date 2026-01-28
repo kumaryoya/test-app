@@ -8,6 +8,7 @@ AllCops:
   Exclude:
     - 'bin/**/*'
     - 'db/**/*'
+    - 'lib/tasks/scrape_to_csv.rake'
 
 Layout/LineLength:
   Exclude:
