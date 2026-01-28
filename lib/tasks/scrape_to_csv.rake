@@ -54,7 +54,7 @@ namespace :scrape do
           formatted_date = date.strftime('%Y%m%d')
           puts "Thread #{thread_id}: Processing #{formatted_date}"
 
-          (1..24).each do |jcd_int|
+          [18, 19, 24].each do |jcd_int|
             jcd = format('%02d', jcd_int)
 
             (1..12).each do |race_no|
