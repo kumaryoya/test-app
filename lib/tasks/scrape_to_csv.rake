@@ -43,7 +43,7 @@ namespace :scrape do
 
     (start_date..end_date).each { |date| queue.push(date) }
 
-    10.times do |thread_id|
+    11.times do |thread_id|
       threads << Thread.new do
         puts "Thread #{thread_id} started"
         while (date = begin
