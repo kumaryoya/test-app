@@ -7,15 +7,18 @@ require 'open-uri'
 namespace :scrape do
   desc '競艇データをCSVに出力'
   task to_csv: :environment do
+    YEAR = 2020
+    START_RACE_ID = 1
+
     # ユーザーエージェント
     user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 
     # 保存ディレクトリ作成
     FileUtils.mkdir_p('db/data')
 
-    races_csv_path = 'db/data/2020_races.csv'
-    entries_csv_path = 'db/data/2020_race_entries.csv'
-    results_csv_path = 'db/data/2020_race_results.csv'
+    races_csv_path = "db/data/#{YEAR}_races.csv"
+    entries_csv_path = "db/data/#{YEAR}_race_entries.csv"
+    results_csv_path = "db/data/#{YEAR}_race_results.csv"
 
     CSV.open(races_csv_path, 'w') { |csv| csv << %w[id date stadium_id race_number] }
     CSV.open(entries_csv_path, 'w') do |csv|
@@ -27,8 +30,8 @@ namespace :scrape do
                 exacta_payout quinella_payout]
     end
 
-    start_date = Date.parse('2020-01-01')
-    end_date = Date.parse('2020-12-31')
+    start_date = Date.parse("#{YEAR}-01-01")
+    end_date = Date.parse("#{YEAR}-12-31")
 
     races_data = []
     entries_data = []
@@ -169,14 +172,14 @@ namespace :scrape do
     results_data.sort_by! { |r| [r[0].split('_')[0], r[0].split('_')[1].to_i, r[0].split('_')[2].to_i] }
 
     race_id_map = {}
-    counter = 1
+    counter = START_RACE_ID
     races_data.each do |race|
       race_id_map[race[0]] = counter
       counter += 1
     end
 
     races_data.each_with_index do |race, idx|
-      CSV.open(races_csv_path, 'a') { |csv| csv << [idx + 1, race[1], race[2], race[3]] }
+      CSV.open(races_csv_path, 'a') { |csv| csv << [START_RACE_ID + idx, race[1], race[2], race[3]] }
     end
 
     entries_data.each do |entry|
