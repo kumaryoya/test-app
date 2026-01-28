@@ -8,4 +8,7 @@ class Race < ApplicationRecord
   #   13 => :尼崎, 14 => :鳴門, 15 => :丸亀, 16 => :児島,
   #   17 => :宮島, 18 => :徳山, 19 => :下関, 20 => :若松,
   #   21 => :芦屋, 22 => :福岡, 23 => :唐津, 24 => :大村 }
+
+  has_many :race_entries, dependent: :destroy
+  has_many :race_results, dependent: :destroy
 end
