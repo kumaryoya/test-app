@@ -13,6 +13,22 @@ namespace :scrape do
     # ユーザーエージェント
     user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 
+    def fetch_with_retry(url, user_agent, max_retries = 5)
+      retries = 0
+      begin
+        URI.open(url, 'User-Agent' => user_agent)
+      rescue StandardError => e
+        retries += 1
+        if retries <= max_retries
+          puts "Retry #{retries}/#{max_retries} for #{url}: #{e.message}"
+          sleep(1)
+          retry
+        else
+          raise
+        end
+      end
+    end
+
     # 保存ディレクトリ作成
     FileUtils.mkdir_p('db/data')
 
@@ -59,7 +75,7 @@ namespace :scrape do
 
             (1..12).each do |race_no|
               list_url = "https://www.boatrace.jp/owpc/pc/race/racelist?rno=#{race_no}&jcd=#{jcd}&hd=#{formatted_date}"
-              doc = Nokogiri::HTML(URI.open(list_url, 'User-Agent' => user_agent))
+              doc = Nokogiri::HTML(fetch_with_retry(list_url, user_agent))
 
               table = doc.css('table')[1]
               next unless table
@@ -94,7 +110,7 @@ namespace :scrape do
               end
 
               result_url = "https://www.boatrace.jp/owpc/pc/race/raceresult?rno=#{race_no}&jcd=#{jcd}&hd=#{formatted_date}"
-              res_doc = Nokogiri::HTML(URI.open(result_url, 'User-Agent' => user_agent))
+              res_doc = Nokogiri::HTML(fetch_with_retry(result_url, user_agent))
               tables = res_doc.css('table')
 
               # 着順テーブル（最初のテーブル）
